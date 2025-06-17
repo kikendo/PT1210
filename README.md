@@ -3,11 +3,11 @@
 
 Credits:
 
-  * **Original Concept** - Hoffman & Akira
+  * **Original Concept** - Akira
   * **Code** - Hoffman & d0pefish
   * **v1.1+ C Rewrite** - d0pefish
   * **Graphics** - Akira
-  * **Testing** - PT12 Krew
+  * **Testing** - tecon
 
 ---
 
