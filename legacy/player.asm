@@ -945,7 +945,7 @@ mt_sononew
                   MOVE.B     n_sampleoffset(A6),D0
                   LSL.W      #7,D0
                   CMP.W      n_length(A6),D0
-                  BGE.S      mt_sofskip
+                  BHS.S      mt_sofskip
                   SUB.W      D0,n_length(A6)
                   move.w     n_length(a6),n_offsetlen(a6)
                   LSL.W      #1,D0
@@ -968,7 +968,7 @@ mt_sononew2
                   MOVE.B     n_sampleoffset(A6),D0
                   LSL.W      #7,D0
                   CMP.W      n_length(A6),D0
-                  BGE.S      mt_sofskip2
+                  BHS.S      mt_sofskip2
                   SUB.W      D0,n_length(A6)
                   LSL.W      #1,D0
                   ADD.L      D0,n_start(A6)                                     ; OFFSET1
