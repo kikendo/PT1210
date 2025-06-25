@@ -1,184 +1,67 @@
-# PT-1210 MK1 v1.1
-## The ProTracker Turntable
+# PT-1210
+## Digital ProTracker Turntable Software
 
 Credits:
 
-  * **Original Concept** - Akira
-  * **Code** - Hoffman & d0pefish
-  * **v1.1+ C Rewrite** - d0pefish
-  * **Graphics** - Akira
-  * **Testing** - tecon
+  * **Original Concept** - [Akira](http://kikencorp.com)
+  * **Code** - [Hoffman](https://github.com/djh0ffman) & [d0pefish](https://github.com/dwhinham)
+  * **Additional code on the original** StingRay (system kill/restore)
+  * **Additional assistance** - [robinsonb5](https://github.com/robinsonb5) (repitching algorithm math)
+  * **v1.1+ C Rewrite** - [d0pefish](https://github.com/dwhinham)
+  * **Graphics** - [Akira](http://kikencorp.com)
+  * **Main Testing** - [tecon](https://demozoo.org/sceners/5311/) & [Akira](http://kikencorp.com)
 
 ---
 
 ## What is it?
 
-PT-1210 is a program for DJ'ing ProTracker modules. It essentially turns
-your Amiga into a turntable / CDJ with nudge, pitch control and so on.
+PT-1210 is a Protracker Digital Turntable, that is, a computer program that will let you play [Amiga Protracker](https://en.wikipedia.org/wiki/Protracker) module files (.MOD) as if you were playing with a [CDJ](https://en.wikipedia.org/wiki/CDJ)
+turntable. Think of it as Traktor for the Protracker generation.
+It runs on your [Commodore Amiga](https://en.wikipedia.org/wiki/Amiga) and turns it into the ultimate tool for you to play live at shows and DJ sets. Don't worry about how old your machine is! Taking optimized advantage of the 680x0 CPU, PT-1210 runs even in the most humble Amiga setups.
 
-It has a number of features but the most important one is that it can
-re-pitch the samples played to match the BPM you want to play the tune at.
-This means drum and music loops will still be in sync and the other
-instruments will still be in key.
+PT-1210 is the first player of its kind, providing the ability to re-pitch samples to match the BPM you want to play the tune at, looping effects, channel muting and step/pattern navigation.
 
-## What do I need?
+## Why?
+We are people who love the Amiga, ProTracker, DJing and live electronic music. Up until this point there was no real Amiga tool aimed at live performance that DJs and musicians could use in any kind of live setting.
 
-It will run on pretty much any Amiga, OSC/ESC, AGA, Accelerated and so on.
-I would recommend however that you run it using a CF card on the IDE port
-with 2 meg of chip ram. If you are using two Amigas I would also recommend
-that they are the same type, like two A1200's or two A600's. You can also
-use a hard drive, PCMCIA adapter CF Card, SD or even floppy disk.
+It all started with Akira researching this possibility for his livesets. After [modifying a version of Protracker with Delek](http://kikencorp.com/wp-content/gimgs/9_ptlivepreview.png) to do some of what he wanted to do, he went to the English Amiga Board to [discuss the possibility of repitching a .MOD](https://web.archive.org/web/20201103201440/http%3A%2F%2Feab.abime.net%2Fshowthread.php%3Ft%3D63413), finding the solution in an ancient and forgotten version of Protracker and with some big help from robinsonb5 who figured out the math. Hoffman got interested in what Akira was trying to do, swooped in and did a [basic prototype](https://www.kikencorp.com/wp-content/uploads/2015/05/002.png) of the functionality. Thus PT-1210 was born.
 
-## How do I use it?
+The Amiga is a computer that kickstarted the career of [many](https://www.discogs.com/master/1603682-Equinox-Early-Works-93-94-The-Demos) [people](https://en.wikipedia.org/wiki/I_Created_Disco) who are music professionals today. As an affordable machine, it gave the tools to produce [studio-quality tracks](https://www.youtube.com/watch?v=57J0Ckdr9JQ) to many people that otherwise would have been left out by the much higher cost of studio equipment for making electronic music. It's very stable and responsive, and it still sounds really good.
 
-Put all your modules in a folder with the program and run it. When it starts
-it will scan current folder for any ProTracker modules and add them to the file
-selector (M.K.). It will also try to determine the BPM. Simply select a module and
-it will load it, take you to the player screen and start playing. 
+Lots of tunes made in the 90s are still very relevant, aesthetically, today. New music is being made in Protracker format every year by both old heads and new blood, attracted to the platform by its simplicity and its connection to the roots of certain music genres like [hardcore](https://boozedrome.bandcamp.com/album/boozedrome-winter-2025) and [jungle](https://futureretrolondon.bandcamp.com/album/life-energy).
 
-# Keyboard Controls
-## File Selector Mode
+Playing Protracker modules in real time also allows you to modify them slightly at runtime, something you are not able to do with rendered audio files, introducing a lot of new options into your setup and performance. Traktor Stems? We did it first! So why not? Being an Amiga DJ is cool :)
 
-|Key|Function|
-|---|---|
-| HELP        | Switch screens (load and DJ mode) |
-| UP / DOWN   | Select file |
-| RETURN      | Load Tune |
-| F10         | Sort list by BPM (toggles asc / desc) |
-| F9          | Sort list by Filename (toggles asc / desc) |
-| ESCAPE      | Quit (hold for a second) |
-| A-Z / 0-9   | Pick first file with matching first letter |
-| F5          | Refresh folder |
+## System Requirements
 
-NOTE: Quit will not work if a tune is playing!
+Minimum:
+- A 68k-based Amiga computer ([emulators](http://winuae.net) and [FPGAs](https://github.com/mist-devel/mist-board/wiki) are 68k. PPC/next gen is not supported)
+- 512KB Chip RAM, you will have very little RAM left for tunes though.
+- A convenient display monitor
+- Bunch of [module files](https://www.exotica.org.uk/wiki/Modland) on disk
 
-## DJ Mode
+Recommended:
+- 68EC020 processor @ 14Mhz or higher
+- 2MB Chip RAM
+- 0.5MB Fast RAM or more
+- Kickstart 2.x or higher
+- Compactflash as solid state hard drive
+- Compactflash/SD/MMC on PCMCIA slot
+- lowlevel.library in LIBS: or ROM for CD32 pad support
 
-|Key|Function|
-|---|---|
-| HELP        | Switch screens (load and DJ mode) |
-| LEFT        | Nudge backward |
-| RIGHT       | Nudge forward |
-| SHIFT LEFT  | Hard nudge forward |
-| SHIFT RIGHT | Hard nudge back  |
-| UP          | Increase BPM |
-| DOWN        | Decrease BPM |
-| SHIFT UP    | Increase BPM fine tune |
-| SHIFT DOWN  | Decrease BPM fine tune |
-| SPACE       | Stop / Play |
-| TAB         | Toggle repitch on / off |
-| DELETE 	  | Resets tempo to original |
-| BACKSPACE   | Freezes the current pitch offset when adjusting the tempo further |
-| \`          | Kills sound DMA |
-| 1/2/3/4		  | Mute / Un-mute channel |
-| SHIFT 1/2/3/4	  | Solo channel |
-| 5			  | Un-mute all channels |
+## How do I use it? I want to learn more
 
-## Pattern / Position Functions
-
-|Key|Function|
-|---|---|
-| F1          | Jump to cue pattern |
-| F2          | Jump to cue pattern after current pattern ends |
-| F3          | Set current pattern as cue |
-| F10         | Pattern Loop (start / stop / deactivate) |
-| +           | Move forward one pattern (shift moves loop size) |
-| -           | Move back one pattern (shift moves loops size) |
-| SHIFT +     | Move forward line loop size |
-| SHIFT -     | Move back line loop size |
-| CTRL +      | Move cue pattern forward |
-| CTRL -      | Move cue pattern back |
-
-## Line Loop Functions
-
-|Key|Function|
-|---|---|
-| F6          | Decrease loop size |
-| F7          | Increase loop size |
-| F5          | Activate loop |
-| F4          | Toggle Slip On / Off |
-
-## Pattern Looping
-
-F10 will cycle through the pattern loop modes. The first press will store the
-loop start point and the second press will store the loop end point. The
-third press will then deactivate the loop. 
-
-# Line Looping
-
-Line looping enables you to loop small sections of the current pattern. The
-loop start point currently quantises to a beat (assuming speed 6) so
-positions 0,4,8,12,16,20,24,28... etc.
-
-Slip mode is enabled by default. If you activate a loop with this ON, it continues
-increase the track position while looping. This means when you deactivate
-the loop, the track drops into the position of the tune as if you never
-looped it. You can switch to normal loop mode which will continue playing
-the track from after the loop point when deactivated.
-
-# BPM Detection
-
-The BPM detection works by looking at the first line of the first pattern
-within the module. This seems to work pretty well as it's always the first
-thing you set.  However, if no BPM is set on the first line, then it will
-assume that it is VBR timing rather than CIA and set the BPM to 125.
-This is fine as long as the tune has been written at, say for example
-a tempo of 6 or 3 as this is 125 BPM. If the module is written with
-no CIA timing and a tempo of say 5, then the BPM will be inacurate.
-
-BTW - there is no way around this! ( i think! )
-
-# FAQ
-## Why on earth did you make this program?
-
-It started as a discussion on the EAB forum where Akira was asking if the
-repitch function would be possible. After some more posts I started making
-a little proof of concept program with just one module. It worked and much
-better then we expected it to as well! Gradually over time I've added more
-functions, things like looping, pattern display, scopes and so on.
-
-## Can I have a system friendly version?
-
-PT1210 is now system friendly as of version 1.1!
-
-## My module sounds weird!
-
-The player is one of the original ProTracker replay sources so it should be
-pretty dam accurate. If it sounds weird, check it in ProTracker v2.3d first
-and fix it there. If it still sounds weird, provide us with an example and 
-we'll take a look.
-
-Becareful when pitching tunes up higher in BPM. As you probably know the Paula
-chip can only play samples up to a certain pitch. If your module runs the
-samples high in pitch and you push then tempo up too much, they wont go any
-further.
-
-## I wrote my module in FastTracker II and it crashes ProTracker!
-
-There are a number of modules that exist where they have no REPLEN set on the
-samples. Our guess is they've been written in FastTracker or similar. These
-actually crash ProTracker when trying to play them. Crashing is a bad thing
-so we apply a patch to the modules on load to fix this issue.
-
-## Using different Amigas
-
-I've tried using an A600 alongside an A1200 and found that by default they do
-sound different. This is because they made the A600 badly and chopped a lot of
-the high end off the sound. There is a hardware hack, ask Akira! I also noticed
-that the timing was slightly different between the two Amigas which we believe
-is a small difference in the two systems CIA chips. There is a fine pitch adjust
-which should help with this timing issue.
-
-## Who are you?
-
-We are people who love the Amiga, love ProTracker and love DJ'ing. 
+Read the documentation for more information.
 
 ---
 
-# Changelog
+## Changelog
 
-2024-04-19
-It's been ten years, might as well put it all out there now :D
+2024-06-25
+Included two fixes, one by Piru to the file requester, and I spliced 8bitbubsy's fix for the 9xx command on samples larger than 64KB. 9XX will now work but it will still only let you go through the first 64KB of the sample. At least the samples will not be muted now and this should assure compatibility with tracks made on pt2clone.
+
+
+Legacy changelog
 
 2014-05-06
 Fixed bug where scopes would crash if they hit a sample 0.
