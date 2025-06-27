@@ -61,7 +61,7 @@ Recommended:
 Included two fixes, one by Piru to the file requester, and I spliced 8bitbubsy's fix for the 9xx command on samples larger than 64KB. 9XX will now work but it will still only let you go through the first 64KB of the sample. At least the samples will not be muted now and this should assure compatibility with tracks made on pt2clone.
 
 
-Legacy changelog
+### Legacy changelog
 
 2014-05-06
 Fixed bug where scopes would crash if they hit a sample 0.
