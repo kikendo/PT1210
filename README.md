@@ -51,7 +51,7 @@ Recommended:
 
 ## How do I use it? I want to learn more
 
-Read the documentation for more information.
+[Read the documentation for more information](https://github.com/kikendo/PT1210/wiki).
 
 ---
 
